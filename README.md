@@ -13,7 +13,7 @@ SpringBootUp.getBean("MyBean");
 # Maven Repo
 ```xml
 <dependency>
-	<groupId>com.github.wnameless.spring</groupId>
+	<groupId>com.github.wnameless.spring.boot.up</groupId>
 	<artifactId>spring-boot-up-core</artifactId>
 	<version>${newestVersion}</version>
 	<!-- Newest version shows in the maven-central badge above -->
