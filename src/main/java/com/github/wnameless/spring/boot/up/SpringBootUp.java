@@ -15,7 +15,7 @@ import org.springframework.core.env.Environment;
 
 /**
  * 
- * {@link SpringBootUp} is an utility class and a major entry point for SpringBootUp library.
+ * {@link SpringBootUp} is an utility class and a major entry point for SpringBootUp core library.
  * 
  * @author Wei-Ming Wu
  * 
