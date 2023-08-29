@@ -1,4 +1,4 @@
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.wnameless.spring/spring-boot-up-core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.wnameless.spring/spring-boot-up-core)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.wnameless.spring.boot.up/spring-boot-up-core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.wnameless.spring.boot.up/spring-boot-up-core)
 
 spring-boot-up-core
 =============
