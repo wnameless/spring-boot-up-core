@@ -35,15 +35,15 @@ public class MyConfiguration {}
 | [Bean](#3.0.0-5) | | Provide methods that return Optional values to prevent exceptions | | v3.0.0 |
 | | [findGenericBean](#3.0.0-5.1) | Find an Optional of a generic bean | :heavy_check_mark: | v3.0.0 |
 | | [findAllGenericBeans](#3.0.0-5.2) | Find a List of generic beans | :heavy_check_mark: | v3.0.0 |
-| | [getBean(type), getBean(beanName)](#3.0.0-5.3) | Shortcut: ApplicationContext#getBean | | v3.0.0 |
-| | [findBean(type), findBean(beanName)](#3.0.0-5.4) | Find an Optional of a bean | :heavy_check_mark: | v3.0.0 |
+| | [getBean(type)<br> getBean(beanName)](#3.0.0-5.3) | Shortcut: ApplicationContext#getBean | | v3.0.0 |
+| | [findBean(type)<br> findBean(beanName)](#3.0.0-5.4) | Find an Optional of a bean | :heavy_check_mark: | v3.0.0 |
 | | [getBean(type, arg...)](#3.0.0-5.5) | Shortcut: ApplicationContext#getBean | | v3.0.0 |
 | | [findBean(type, arg...)](#3.0.0-5.6) | Find an Optional of a bean with args | :heavy_check_mark: | v3.0.0 |
-| | [getBean(type, requiredType), getBean(beanName, requiredType)](#3.0.0-5.7) | Shortcut: ApplicationContext#getBean | | v3.0.0 |
-| | [findBean(type, requiredType), findBean(beanName, requiredType)](#3.0.0-5.8) | Find an Optional of a bean with generics | :heavy_check_mark: | v3.0.0 |
+| | [getBean(beanName, requiredType)](#3.0.0-5.7) | Shortcut: ApplicationContext#getBean | | v3.0.0 |
+| | [findBean(beanName, requiredType)](#3.0.0-5.8) | Find an Optional of a bean with generics | :heavy_check_mark: | v3.0.0 |
 | | [getBeansOfType](#3.0.0-5.9) | Shortcut: ApplicationContext#getBeansOfType | | v3.0.0 |
 | | [getBeansWithAnnotation](#3.0.0-5.10) | Shortcut: ApplicationContext#getBeansWithAnnotation | | v3.0.0 |
-| | [containsBean(type), containsBean(beanName)](#3.0.0-5.11) | Check bean existence | :heavy_check_mark: | v3.0.0 |
+| | [containsBean(type)<br> containsBean(beanName)](#3.0.0-5.11) | Check bean existence | :heavy_check_mark: | v3.0.0 |
 | [Message](#3.0.0-4) | | Remove Locale arguments by LocaleContextHolder#getLocale | | v3.0.0 |
 | | [getMessage(code)](#3.0.0-4.1) | Shortcut: ApplicationContext#getMessage | | v3.0.0 |
 | | [findMessage(code)](#3.0.0-4.2) | Find an Optional of a message | :heavy_check_mark: | v3.0.0 |
@@ -93,14 +93,14 @@ Optional<TestArgBean> argBeanOpt;
 argBeanOpt = SpringBootUp.findBean(TestBean.class, "arg");
 argBeanOpt = SpringBootUp.findBean("testBean", "arg");
 ```
-#### [:top:](#top) getBean(type, requiredType), getBean(beanName, requiredType)<a id='3.0.0-5.7'></a>
+#### [:top:](#top) getBean(beanName, requiredType)<a id='3.0.0-5.7'></a>
 ```java
 // Equivalent to ApplicationContext#getBean(String, Class)
- TestBean beanWithRequiredType = SpringBootUp.getBean(TestBean.BEAN_NAME, TestBean.class);
+TestBean beanWithRequiredType = SpringBootUp.getBean("testBean", TestBean.class);
 ```
-#### [:top:](#top) findBean(type, requiredType), findBean(beanName, requiredType)<a id='3.0.0-5.8'></a>
+#### [:top:](#top) findBean(beanName, requiredType)<a id='3.0.0-5.8'></a>
 ```java
-Optional<TestBean> beanWithRequiredType = SpringBootUp.findBean(TestBean.BEAN_NAME, TestBean.class);
+Optional<TestBean> beanWithRequiredType = SpringBootUp.findBean("testBean", TestBean.class);
 ```
 #### [:top:](#top) getBeansOfType<a id='3.0.0-5.9'></a>
 ```java
