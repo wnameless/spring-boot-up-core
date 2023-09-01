@@ -33,18 +33,18 @@ public class MyConfiguration {}
 | Name | Option | Description | Exception-Free | Since |
 | --- | --- | --- | --- | --- |
 | [Bean](#3.0.0-5) | | Provide methods that return Optional values to prevent exceptions | | v3.0.0 |
-| | [findGenericBean](#3.0.0-5.1) | Find an Optional of a generic bean | :heavy_check_mark: | v3.0.0 |
-| | [findAllGenericBeans](#3.0.0-5.2) | Find a List of generic beans | :heavy_check_mark: | v3.0.0 |
+| | [findGenericBean](#3.0.0-5.1) | Find an Optional of target generic bean | :heavy_check_mark: | v3.0.0 |
+| | [findAllGenericBeans](#3.0.0-5.2) | Find a List of target generic beans | :heavy_check_mark: | v3.0.0 |
 | | [getBean(type)<br> getBean(beanName)](#3.0.0-5.3) | Shortcut: ApplicationContext#getBean | | v3.0.0 |
-| | [findBean(type)<br> findBean(beanName)](#3.0.0-5.4) | Find an Optional of a bean | :heavy_check_mark: | v3.0.0 |
+| | [findBean(type)<br> findBean(beanName)](#3.0.0-5.4) | Find an Optional of target bean | :heavy_check_mark: | v3.0.0 |
 | | [getBean(type, arg...)](#3.0.0-5.5) | Shortcut: ApplicationContext#getBean | | v3.0.0 |
-| | [findBean(type, arg...)](#3.0.0-5.6) | Find an Optional of a bean with args | :heavy_check_mark: | v3.0.0 |
+| | [findBean(type, arg...)](#3.0.0-5.6) | Find an Optional of target bean with args | :heavy_check_mark: | v3.0.0 |
 | | [getBean(beanName, requiredType)](#3.0.0-5.7) | Shortcut: ApplicationContext#getBean | | v3.0.0 |
-| | [findBean(beanName, requiredType)](#3.0.0-5.8) | Find an Optional of a bean with generics | :heavy_check_mark: | v3.0.0 |
+| | [findBean(beanName, requiredType)](#3.0.0-5.8) | Find an Optional of target bean with generics | :heavy_check_mark: | v3.0.0 |
 | | [getBeansOfType](#3.0.0-5.9) | Shortcut: ApplicationContext#getBeansOfType | | v3.0.0 |
 | | [getBeansWithAnnotation](#3.0.0-5.10) | Shortcut: ApplicationContext#getBeansWithAnnotation | | v3.0.0 |
 | | [containsBean(type)<br> containsBean(beanName)](#3.0.0-5.11) | Check bean existence | :heavy_check_mark: | v3.0.0 |
-| [Message](#3.0.0-4) | | Remove Locale arguments by LocaleContextHolder#getLocale | | v3.0.0 |
+| [Message](#3.0.0-4) | | Remove Locale argument by utilizing LocaleContextHolder#getLocale | | v3.0.0 |
 | | [getMessage(code)](#3.0.0-4.1) | Shortcut: ApplicationContext#getMessage | | v3.0.0 |
 | | [findMessage(code)](#3.0.0-4.2) | Find an Optional of a message | :heavy_check_mark: | v3.0.0 |
 | | [getMessage(code, arg...)](#3.0.0-4.3) | Shortcut: ApplicationContext#getMessage | | v3.0.0 |
@@ -52,9 +52,9 @@ public class MyConfiguration {}
 | | [getMessage(code, args, default)](#3.0.0-4.5) | Shortcut: ApplicationContext#getMessage | :heavy_check_mark: | v3.0.0 |
 | | [getMessage(MessageSourceResolvable)](#3.0.0-4.6) | Shortcut: ApplicationContext#getMessage | | v3.0.0 |
 | | [findMessage(MessageSourceResolvable)](#3.0.0-4.7) | Find an Optional of a message with MessageSourceResolvable | :heavy_check_mark: | v3.0.0 |
-| [Event](#3.0.0-3) | | Shortcut: Event publishing | | v3.0.0 |
-| [Enviroment](#3.0.0-2) | | Shortcut: Enviroment | | v3.0.0 |
-| [ApplicationContext](#3.0.0-1) | | Shortcut: ApplicationContext | | v3.0.0 |
+| [Event](#3.0.0-3) | | Shortcut: ApplicationContext#publishEvent | - | v3.0.0 |
+| [Enviroment](#3.0.0-2) | | Shortcut: Enviroment | - | v3.0.0 |
+| [ApplicationContext](#3.0.0-1) | | Shortcut: ApplicationContext | - | v3.0.0 |
 
 ### [:top:](#top) Bean<a id='3.0.0-5'></a>
 #### [:top:](#top) findGenericBean<a id='3.0.0-5.1'></a>
