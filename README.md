@@ -19,7 +19,7 @@ SpringBootUp.getBean("MyBean");
 	<!-- Newest version shows in the maven-central badge above -->
 </dependency>
 ```
-The lib uses Semantic Versioning `{MAJOR.MINOR.PATCH}`.<br>
+This lib uses Semantic Versioning: `{MAJOR.MINOR.PATCH}`.<br>
 However, the MAJOR version is always matched the Spring Boot MAJOR version.
 
 # Quick Start
@@ -35,12 +35,12 @@ public class MyConfiguration {}
 | [Bean](#3.0.0-5) | | Provide methods that return Optional values to prevent exceptions | | v3.0.0 |
 | | [findGenericBean](#3.0.0-5.1) | Find an Optional of a generic bean | :heavy_check_mark: | v3.0.0 |
 | | [findAllGenericBeans](#3.0.0-5.2) | Find a List of generic beans | :heavy_check_mark: | v3.0.0 |
-| | [getBean(type), getBean(beanName), getBean(beanName, requiredType)](#3.0.0-5.3) | Shortcut: ApplicationContext#getBean | | v3.0.0 |
-| | [findBean(type), findBean(beanName), findBean(beanName, requiredType)](#3.0.0-5.4) | Find an Optional of a bean | :heavy_check_mark: | v3.0.0 |
+| | [getBean(type), getBean(beanName)](#3.0.0-5.3) | Shortcut: ApplicationContext#getBean | | v3.0.0 |
+| | [findBean(type), findBean(beanName)](#3.0.0-5.4) | Find an Optional of a bean | :heavy_check_mark: | v3.0.0 |
 | | [getBean(type, arg...)](#3.0.0-5.5) | Shortcut: ApplicationContext#getBean | | v3.0.0 |
 | | [findBean(type, arg...)](#3.0.0-5.6) | Find an Optional of a bean with args | :heavy_check_mark: | v3.0.0 |
-| | [getBean(type, generic...)](#3.0.0-5.7) | Shortcut: ApplicationContext#getBean | | v3.0.0 |
-| | [findBean(type, generic...)](#3.0.0-5.8) | Find an Optional of a bean with required type | :heavy_check_mark: | v3.0.0 |
+| | [getBean(type, requiredType), getBean(beanName, requiredType)](#3.0.0-5.7) | Shortcut: ApplicationContext#getBean | | v3.0.0 |
+| | [findBean(type, requiredType), findBean(beanName, requiredType)](#3.0.0-5.8) | Find an Optional of a bean with generics | :heavy_check_mark: | v3.0.0 |
 | | [getBeansOfType](#3.0.0-5.9) | Shortcut: ApplicationContext#getBeansOfType | | v3.0.0 |
 | | [getBeansWithAnnotation](#3.0.0-5.10) | Shortcut: ApplicationContext#getBeansWithAnnotation | | v3.0.0 |
 | | [containsBean(type), containsBean(beanName)](#3.0.0-5.11) | Check bean existence | :heavy_check_mark: | v3.0.0 |
@@ -65,22 +65,19 @@ Optional<GenericBean<String>> genericBean = SpringBootUp.findGenericBean(Generic
 ```java
 List<GenericBean<String>> allGenericBeans = SpringBootUp.findAllGenericBeans(GenericBean.class, String.class);
 ```
-#### [:top:](#top) getBean(type), getBean(beanName), getBean(beanName, requiredType)<a id='3.0.0-5.3'></a>
+#### [:top:](#top) getBean(type), getBean(beanName)<a id='3.0.0-5.3'></a>
 ```java
 TestBean bean;
 // Equivalent to ApplicationContext#getBean(Class)
 bean = SpringBootUp.getBean(TestBean.class);
 // Equivalent to ApplicationContext#getBean(String)
 bean = SpringBootUp.getBean("testBean");
-// Equivalent to ApplicationContext#getBean(String, Class)
-bean = SpringBootUp.getBean("testBean", TestBean.class);
 ```
-#### [:top:](#top) findBean(type), findBean(beanName), findBean(beanName, requiredType)<a id='3.0.0-5.4'></a>
+#### [:top:](#top) findBean(type), findBean(beanName)<a id='3.0.0-5.4'></a>
 ```java
 Optional<TestBean> beanOpt;
 beanOpt = SpringBootUp.findBean(TestBean.class);
 beanOpt = SpringBootUp.findBean("testBean");
-beanOpt = SpringBootUp.findBean("testBean", TestBean.class);
 ```
 #### [:top:](#top) getBean(type, arg...)<a id='3.0.0-5.5'></a>
 ```java
@@ -96,19 +93,22 @@ Optional<TestArgBean> argBeanOpt;
 argBeanOpt = SpringBootUp.findBean(TestBean.class, "arg");
 argBeanOpt = SpringBootUp.findBean("testBean", "arg");
 ```
-#### [:top:](#top) getBean(type, generic...)<a id='3.0.0-5.7'></a>
+#### [:top:](#top) getBean(type, requiredType), getBean(beanName, requiredType)<a id='3.0.0-5.7'></a>
 ```java
-// Equivalent to ApplicationContext#getBeansOfType(Class, Class...)
-GenericBean<?> beanWithRequiredType = SpringBootUp.getBean(GenericBean.class, String.class);
+// Equivalent to ApplicationContext#getBean(String, Class)
+ TestBean beanWithRequiredType = SpringBootUp.getBean(TestBean.BEAN_NAME, TestBean.class);
 ```
-#### [:top:](#top) findBean(type, generic...)<a id='3.0.0-5.8'></a>
+#### [:top:](#top) findBean(type, requiredType), findBean(beanName, requiredType)<a id='3.0.0-5.8'></a>
 ```java
-Optional<GenericBean<?>> beanWithRequiredType = SpringBootUp.findBean(GenericBean.class, String.class);
+Optional<TestBean> beanWithRequiredType = SpringBootUp.findBean(TestBean.BEAN_NAME, TestBean.class);
 ```
 #### [:top:](#top) getBeansOfType<a id='3.0.0-5.9'></a>
 ```java
+Map<String, GenericBean<?>> beansOfType;
 // Equivalent to ApplicationContext#getBeansOfType(Class)
-Map<String, GenericBean<?>> beansOfType = SpringBootUp.getBeansOfType(GenericBean.class)
+beansOfType = SpringBootUp.getBeansOfType(GenericBean.class);
+// Equivalent to ApplicationContext#getBeansOfType(Class, boolean, boolean)
+beansOfType = SpringBootUp.getBeansOfType(GenericBean.class, true, true);
 ```
 #### [:top:](#top) getBeansWithAnnotation<a id='3.0.0-5.10'></a>
 ```java
