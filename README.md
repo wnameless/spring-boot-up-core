@@ -1,4 +1,4 @@
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.wnameless.spring/spring-boot-up-core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.wnameless.spring/spring-boot-up-core)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.wnameless.spring.boot.up/spring-boot-up-core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.wnameless.spring.boot.up/spring-boot-up-core)
 
 spring-boot-up-core
 =============
@@ -13,7 +13,7 @@ SpringBootUp.getBean("MyBean");
 # Maven Repo
 ```xml
 <dependency>
-	<groupId>com.github.wnameless.spring</groupId>
+	<groupId>com.github.wnameless.spring.boot.up</groupId>
 	<artifactId>spring-boot-up-core</artifactId>
 	<version>${newestVersion}</version>
 	<!-- Newest version shows in the maven-central badge above -->
