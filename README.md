@@ -1,4 +1,5 @@
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.wnameless.spring.boot.up/spring-boot-up-core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.wnameless.spring.boot.up/spring-boot-up-core)
+[![codecov](https://codecov.io/gh/wnameless/spring-boot-up-core/branch/main/graph/badge.svg)](https://codecov.io/gh/wnameless/spring-boot-up-core)
 
 spring-boot-up-core
 =============
