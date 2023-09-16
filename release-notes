@@ -1,2 +1,5 @@
 Version 3.0.0
 + First release
+
+Version 3.1.0
+* Change @EnableSpringBootUp from using @ComponentScan to @Import
